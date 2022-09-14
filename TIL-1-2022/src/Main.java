@@ -4,12 +4,25 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int year = sc.nextInt();
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
 
-        if(year%400 == 0) System.out.println(1);
-        else if(year%100 == 0) System.out.println(0);
-        else if(year%4 == 0) System.out.println(1);
-        else System.out.println(0);
+        int result = 0;
+        if(a==b && b==c) result = 10000+(a*1000);
+        else if(a==b) result = 1000+(a*100);
+        else if(a==c) result = 1000+(a*100);
+        else if(b==c) result = 1000+(b*100);
+        else {
+            if(a>b && a>c) result = a*100;
+            else if(b>a && b>c) result = b*100;
+            else if(c>a && c>b) result = c*100;
+        }
+        System.out.println(result);
+
+
+
+
 
 
     }
