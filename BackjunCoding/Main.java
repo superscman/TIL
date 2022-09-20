@@ -1,22 +1,24 @@
 package BackjunCoding;
 
 import java.util.Scanner;
-
-class Test {
-    public static long sum(int[] a) {
-        long result = 0;
-        for(int i =0; i<=a.length-1; i++) {
-            result += a[i];
-
-        }
-        System.out.println(result);
-        return result;
-    }
-}
+import java.util.StringTokenizer;
 
 public class Main {
+
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5,6,7,8,9,10};
-        Test.sum(arr);
+        Scanner in = new Scanner(System.in);
+
+       int a = in.nextInt();
+
+       int b = in.nextInt();
+
+       int s1 = (a/100)+((a/10)*10)+((a%10)*100);
+
+       int s2 = (b/100)+((b/10)*10)+((b%10)*100);
+
+       if(s1 < s2) System.out.println(s2);
+       if(s2 < s1) System.out.println(s1);
+
     }
+
 }
