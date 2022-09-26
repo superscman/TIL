@@ -1,0 +1,29 @@
+BufferdeReader & BufferedWriter & StringTokenizer
+
+Scanner는 무거운 친구라서 버퍼리더를 써야할 경우가 있다. 
+
+버퍼리더는 근데 스트링밖에 못받음. 
+
+BufferedReader bf = new BufferedREader(new InputStreamReader(System.in)); 으로 객체를 생성하면 
+
+String a = bf.readLine(); << 이렇게 스트링으로 받을 수 있는데 
+
+int i = Integer.parseInt(a) <<이렇게 편환을 해줘야 인트로 사용가능! 
+
+그런데 readLine() 메서드는  줄단위로 받기 때문에 공백을 인식못한단 말임... 
+
+그럴때는 스트링토큰나이저를 사용해야함. 
+
+StringTokenizer st = new StringTokenizer(bf.readLIne()); 으로 객체 생성해서 입력값을 받고 
+
+String s = st.newtToken(); 으로 입력받을 수 있음 마찬가지로 인트라면 
+
+int b = Integer.parseInt(s) 이렇게 인트로 변환해서 사용해야함.  휴.. 
+
+출력할때는 버퍼 라이터를 활용해야 하는데 
+
+BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.in)); 으로 객체를 생성해놓고 
+
+bw.write(); 메서드를 사용해서 출력가능. 
+
+bw.close();로 꼭 닫아줘야함.
