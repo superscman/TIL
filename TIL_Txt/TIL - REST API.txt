@@ -1,0 +1,36 @@
+1.오늘 학습 내용 중 새롭게 배운 내용은 무엇인가요?
+REST API
+OPEN API와 API KEY
+POSTMAN 사용법
+
+2.오늘 새롭게 학습한 내용을 다른 사람에게 설명할 수 있나요?
+REST API
+Representational state Transfer, REST API: 웹에서 사용되는 데이터나 자원(Resource)을 HTTP URI로 표현하고, HTTP 프로토콜을 통해 요청과 응답을 정의하는 방식
+
+리차드슨의 REST 성숙도 모델
+0단계: HTTP 사용
+1단계: 개별 리소스와의 통신 준수(모든 자원은 개별 리소스에 맞는 엔드포인트(Endpoint)를 사용해야 한다는 것과 요청하고 받은 자원에 대한 정보를 응답으로 전달해야함.
+엔드포인트 작성시에는 동사,HTTP메서드, 어떤 행위에 대한 단어사용은 지양
+2단계: HTTP 메소드 원칙 준수(CRUD(Create, read, update, delete)에 맞게 적절한 HTTP 메서드를 사용
+GET:서버의 데이터를 변화시키지 않는 요청에 사용
+POST: 요청마다 새로운 리소스를 생성
+PUT:요청마다 같은 리소스를 반환(전체 수정)
+PATCH: 부분수정
+DELETE: 삭제
+3단계: HATEOAS원칙 준수((Hypertext As The Engine State) 응답에 리소스의 URI를 포함한 링크 요소를 삽입하여 작성)
+
+OPEN API와 API KEY
+공공데이터 포털(https://www.data.go.kr/), 날씨 포털(https://openweathermap.org/api)등에서 API Key를 받아 JSON형태로 데이터를 받아 사용.
+
+POSTMAN 사용법
+https://www.postman.com/ 회원가입후 사용.
+GET,POST 등의 메서드를 활용하여 요청하고 응답받음.
+
+3.오늘 학습한 내용 중 아직 이해되지 않은 불확실한 내용은 무엇인가요?
+서버에 요청하고 응답받는 느낌에 대해서는 알게 되었음. 정확하고 자세히는 모름.
+
+4.이해되지 않은, 불확실한 내용을 보완하기 위해서 나는 무엇을 할 수 있을까요?
+앞으로 지속적으로 실습을 하면서 익혀나가도록 하겠음. 오늘 공공API의 응답받기를 해보도록 하겠음.
+
+5.나의 오늘 학습 만족도는 몇점인가요?
+90점. 오늘은 널널한 스케줄로 행복한 하루였습니다. 페어활동도 딥토크도 무난무난했습니다. 내일부터는 SQL을 배우는데 화이팅해야쥐
