@@ -1,0 +1,77 @@
+1.오늘 학습 내용 중 새롭게 배운 내용은 무엇인가요?
+
+관계형 데이터베이스
+관계종류
+1:1 관계
+1:N 관계
+N:N 관계
+자기참조 관계
+SQL 내장함수
+SELECT 실행 순서
+
+2.오늘 새롭게 학습한 내용을 다른 사람에게 설명할 수 있나요?
+
+관계형 데이터베이스
+구조화된 데이터 = 하나의 테이블
+사전에 정의된 테이블 relation 그래서 관계형데이터베이스
+
+관계종류
+1:1 관계, 1:N 관계, N:N 관계, self referencing 관계
+
+1:1 관계
+테이블끼리 하나씩 연결되어 있을때, 그러나 잘 쓰진않음. 그냥 테이블 하나에 다 쓰면 되니까
+
+1:N 관계
+가장 많이 씀. 이렇게 해놓으면 하나에 여러가지 값을 오게 할 수 있으니 편리함.
+
+N:N 관계
+조인테이블을 만들어서 1:N의 관계로 만들어버려서 사용.조언테이블의 기본키도 반드시 있어야함.
+
+자기참조 관계
+테이블이 같은 테이블을 참조할 수도 있음. 1:N의 관계와 유사.
+
+SQL 내장함수
+GROUP BY: 그룹으로 묶기
+SELECT * FROM customers
+GROUP BY state;
+HAVING: GROUP BY로 조회된 결과를 필터링
+SELECT customerId, AVG(Total)
+FROM invoices
+GROUP BY customerId
+HAVING AVG(Total) > 6.00;//모든 고객의 주문서에서 가격의 평균을 구한 뒤 평균 6.0초과만 조회
+-COUNT(): 레코드의 갯수를 헤아릴 때
+
+SELECT *, COUNT(*) FROM customers
+GROUP BY State;// 각 그룹의 첫번째 레코드와 각 그룹의 레코드 갯수를 집계하여 리턴
+-SUM() 레코드의 합 리턴
+
+SELECT InvoiceId, SUM(UnitPrice)
+FROM invoice_items
+GROUP BY InvoiceId;// invoice_items라는 테이블에서 InvoiceId 필드를 기준으로 그룹하고, UnitPrice 필드 값의 합 리턴
+-AVG(): 평균
+-MAX(): 최대값
+-MIN() : 최소값
+
+SELECT 실행 순서
+FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY
+SELECT CustomerId, AVG(Total)
+FROM invoices
+WHERE CustomerId >= 10
+GROUP BY CustomerId
+HAVING SUM(Total) >= 30
+ORDER BY 2
+FROM invoices: invoices 테이블 접근
+WHERE CustomerId >= 10: CustomerId 필드가 10 이상인 레코드들 조회
+GROUP BY CustomerId: CustomerId를 기준으로 그룹화
+HAVING SUM(Total) >= 30: Total 필드의 총합이 30 이상인 결과들만 필터링
+SELECT CustomerId, AVG(Total): 조회된 결과에서 CustomerId 필드와 Total 필드의 평균값을 구하기
+ORDER BY 2: AVG(Total) 필드를 기준으로 오름차순 정렬한 결과 리턴
+
+3.오늘 학습한 내용 중 아직 이해되지 않은 불확실한 내용은 무엇인가요?
+데이터베이스 환경을 구축하는 것에 있어서 조인을 쓰는 법이 미숙함.
+
+4.이해되지 않은, 불확실한 내용을 보완하기 위해서 나는 무엇을 할 수 있을까요?
+예제를 풀어보고 퀴즈를 복습하여서 조인의 사용법에 대해서 익혀보겠음.
+
+5.나의 오늘 학습 만족도는 몇점인가요?
+80점. 스터디를 통해서 내가 이해하지 못하는 것에 대해서 알게 되고 그것을 이해할 수 있었음.
